@@ -118,7 +118,7 @@ namespace lesson5
 
             Console.WriteLine();
             Console.Write("Display the pattern like right angle triangle with number increased by 1:\n");
-            
+
             Console.WriteLine();
 
             Console.Write("Input number : ");
@@ -141,7 +141,7 @@ namespace lesson5
 
             Console.WriteLine();
             Console.Write("Display the sum of the series [ 9 + 99 + 999 + 9999 ...]:\n");
-            
+
             Console.WriteLine();
 
             Console.Write("Input number :");
@@ -159,7 +159,7 @@ namespace lesson5
 
         static void Main8(string[] args)
         {
-            
+
             bool Prime = true;
 
             Console.WriteLine();
@@ -179,17 +179,17 @@ namespace lesson5
                         break;
                     }
                 }
-                if(Prime) 
+                if (Prime)
                 {
                     Console.Write("\n" + a);
                 }
                 Prime = true;
-                
-                
+
+
             }
         }
-
-        static void Main(string[] args)
+        
+        static void Main10(string[] args)
         {
             int number = 0;
             int nNumber = 0;
@@ -200,7 +200,7 @@ namespace lesson5
             Console.Write("Enter Number : ");
             nNumber = number = int.Parse(Console.ReadLine());
 
-            
+
             while (number > 0)
             {
                 var = number % 10;
@@ -216,5 +216,55 @@ namespace lesson5
                 Console.WriteLine("Number is not a Palindrome");
         }
 
-    }
+        static void Main9(string[] args)
+        {
+
+
+
+            int n, i, var1 = 1, var2 = 1, var3 = 0, a;
+
+            Console.WriteLine();
+            Console.Write("Check whether a number can be express as sum of two prime numbers:");
+            
+            Console.WriteLine();
+
+
+            Console.Write("Input positive integer number: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (i = 3; i <= n / 2; i++)
+            {
+                
+                var1 = 1;
+                var2 = 1;
+                for (a = 2; a < i; a++)
+                {
+                    if (i % a == 0)
+                    { var1 = 0; a = i; }
+                }
+                for (a = 2; a < n - i; a++)
+                {
+                    if ((n - i) % a == 0)
+                    { var2 = 0; a = n - i; }
+                }
+                if (var1 == 1 && var2 == 1)
+                {
+                    Console.Write("{0} =  {1} + {2}  \n", n, i, n - i);
+                    var3 = 1;
+                }
+            }
+            if (var3 == 0)
+            { 
+                Console.Write("{0} can not be expressed as sum of two prime numbers", n); 
+            }
+        }
+
+
+
+
+
+
+
+
+    }         
+                
 }
